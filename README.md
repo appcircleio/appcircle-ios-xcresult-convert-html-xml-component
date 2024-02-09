@@ -1,6 +1,6 @@
 # Appcircle Xcresult Convert XML/HTML Component
 
-This component parses test and coverage results to single JSON file. This component currently supports following test and coverage formats
+This component parses test and coverage results into a single file. This component currently supports the following test and coverage formats:
 
 ## Test Format
 
@@ -8,12 +8,11 @@ This component parses test and coverage results to single JSON file. This compon
 
 ## Required Inputs
 
-- `AC_TEST_RESULT_PATH`: Test result path. This directory and subdirectories will be searched for compatible test files. This envıronment variable is automatically set if you use Appcircle's test component
-
+- `AC_OUTPUT_DIR`: Specifies the path for outputs. Conversion results will be stored in this path.
+- `AC_TEST_RESULT_PATH`: Test result path. This directory and its subdirectories will be searched for compatible test files. This environment variable is automatically set if you use Appcircle's test component.
 - `AC_CONVERT_FILE_NAME`: The name of the converted file. You can give a specific name. The default name is `test_results`.
-
-- `AC_CONVERT_TYPE`: This is the convertion type. Xcresult can be converted to HTML or XML.
+- `AC_CONVERT_TYPE`: This is the conversion type. Xcresult can be converted to HTML or XML.
 
 ## Output
 
-- `AC_CONVERTED_TEST_RESULT_PATH`: Component creates a single file which contains the test results in converted extension.
+- `AC_CONVERTED_TEST_RESULT_PATH`: The component creates a single file that contains the test results in the converted extension.
