@@ -1,7 +1,7 @@
 platform: iOS
 buildPlatform:
-displayName: "Xcresult Convert to HTML/XML"
-description: "Convert test results from Xcresutl to HTML/XML"
+displayName: "Convert Xcresult to HTML/XML"
+description: "Convert test results from Xcresult to HTML/XML"
 inputs:
 - key: "AC_OUTPUT_DIR"
   defaultValue: "$AC_OUTPUT_DIR"
