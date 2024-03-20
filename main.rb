@@ -27,11 +27,10 @@ end
 def convert_xml(convert_type, test_result_path, output_dir, convert_file_name, include_coverage)
   puts "xcresult converting to #{convert_type}"
   command = "xcresultparser -o #{convert_type} #{test_result_path} > #{output_dir}/#{convert_file_name}.#{convert_type}"
-  
+
   if include_coverage == 'Yes'
-    command.concat(" ")
-    command.concat("--coverage")
-    command.concat(" ")
+    command.concat(' ')
+    command.concat('--coverage')
   end
   run_command(command)
   puts "#{test_result_path} converted successfuly to #{convert_type}\n Exported to #{output_dir}/#{convert_file_name}.#{convert_type}"
