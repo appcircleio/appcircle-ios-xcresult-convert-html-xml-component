@@ -13,6 +13,10 @@ This component parses test and coverage results into a single file. This compone
 - `AC_CONVERT_FILE_NAME`: The name of the converted file. You can give a specific name. The default name is `test_results`.
 - `AC_CONVERT_TYPE`: This is the conversion type. Xcresult can be converted to HTML or XML.
 
+## Optional Inputs
+
+- `AC_XCRESULTPARSER_BASE_URL`: Base URL of the [xcresultparser](https://github.com/a7ex/xcresultparser) release downloads. Defaults to `https://github.com/a7ex/xcresultparser/releases/download`. The step downloads `<base>/2.2.0/xcresultparser.zip` and verifies its checksum. When `xcresultparser` is already on PATH, the step skips the download.
+
 ## Output
 
 - `AC_CONVERTED_TEST_RESULT_PATH`: The component creates a single file that contains the test results in the converted extension.
