@@ -11,6 +11,8 @@ def env_has_key(key)
   ENV[key].nil? || ENV[key] == '' ? nil : ENV[key]
 end
 
+if __FILE__ == $PROGRAM_NAME
+
 output_dir = env_has_key('AC_OUTPUT_DIR')
 test_result_path = env_has_key('AC_TEST_RESULT_PATH')
 convert_type = env_has_key('AC_CONVERT_TYPE')
@@ -22,6 +24,8 @@ if File.extname(test_result_path) != '.xcresult'
   puts 'Test result extension must be xcresult.'
   exit 0
 end
+
+end # if __FILE__ == $PROGRAM_NAME
 
 def run_command(command)
   puts "@@[command] #{command}"
@@ -64,9 +68,13 @@ def install_xcresultparser(base_url)
   ENV['PATH'] = "#{install_dir}/product:#{ENV['PATH']}"
 end
 
+if __FILE__ == $PROGRAM_NAME
+
 open(ENV['AC_ENV_FILE_PATH'], 'a') do |f|
   f.puts "AC_CONVERTED_TEST_RESULT_PATH=#{output_dir}/#{convert_file_name}.#{convert_type}"
 end
 
 install_xcresultparser(xcresultparser_base_url)
 convert_xml(convert_type, test_result_path, output_dir, convert_file_name, include_coverage)
+
+end # if __FILE__ == $PROGRAM_NAME

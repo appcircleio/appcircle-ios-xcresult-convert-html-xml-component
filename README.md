@@ -20,3 +20,13 @@ This component parses test and coverage results into a single file. This compone
 ## Output
 
 - `AC_CONVERTED_TEST_RESULT_PATH`: The component creates a single file that contains the test results in the converted extension.
+
+## Running tests
+
+Requires [RSpec](https://rspec.info) gem and Ruby standard library (Coverage). No Gemfile or Bundler needed.
+
+```bash
+ruby test/test_main.rb
+```
+
+A coverage report is printed at the end of each run.
